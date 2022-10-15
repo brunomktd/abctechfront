@@ -12,7 +12,7 @@ class OrderAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (location == null) {
-      return TextButton(
+      return ElevatedButton(
         onPressed: onTap,
         child: Text(action),
       );
@@ -33,7 +33,7 @@ class OrderAction extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Position:'),
+                const Text('Posição:'),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

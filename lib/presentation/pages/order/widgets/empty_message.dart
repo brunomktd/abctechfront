@@ -5,6 +5,6 @@ class EmptyMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Nenhuma ordem de serviço econtrada");
+    return const Center(child: Text("Nenhuma ordem de serviço econtrada"));
   }
 }

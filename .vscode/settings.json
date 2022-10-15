@@ -1,0 +1,12 @@
+{
+  "editor.fontLigatures": true,
+  "files.exclude": {
+    "node_modules": true,
+    "**/*.freezed.dart": true,
+    "**/*.config.dart": true,
+    "**/*.gr.dart": true,
+    "**/*.g.dart": true,
+    "**/*.moor.dart": true,
+    "**/*.drift.dart": true
+  }
+}

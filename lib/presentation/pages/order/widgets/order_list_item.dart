@@ -3,6 +3,7 @@ import 'package:abctechfront/domain/core/enums/order_status_enum.dart';
 import 'package:abctechfront/domain/core/extensions/x_dartz.dart';
 import 'package:abctechfront/domain/order/entity/order.dart';
 import 'package:abctechfront/presentation/pages/order/widgets/status_badge.dart';
+import 'package:abctechfront/presentation/ui/app_colors.dart';
 import 'package:abctechfront/presentation/ui/services_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -34,7 +35,7 @@ class _OrderListItemState extends State<OrderListItem> {
                 dividerColor: Colors.transparent,
               ),
               child: ExpansionTile(
-                textColor: const Color(0xFF838383),
+                textColor: textColor,
                 onExpansionChanged: (value) => {
                   setState(
                     () => isOpen = value,
@@ -180,7 +181,7 @@ class _OrderListItemState extends State<OrderListItem> {
                           thickness: 2,
                           indent: 16,
                           endIndent: 16,
-                          color: const Color(0xFF838383).withOpacity(0.1),
+                          color: primaryColor.withOpacity(0.1),
                         ),
                       if (widget.order.status == OrderStatus.ANDAMENTO ||
                           widget.order.status == OrderStatus.PENDENTE)
@@ -207,18 +208,18 @@ class _OrderListItemState extends State<OrderListItem> {
                                           backgroundColor: MaterialStateProperty.all(Colors.white),
                                           elevation: MaterialStateProperty.all(0),
                                           side: MaterialStateProperty.all(
-                                            const BorderSide(
-                                              color: Color(0xFF9B59B6),
+                                            BorderSide(
+                                              color: primaryColor,
                                             ),
                                           ),
                                         ),
                                         onPressed: () => context
                                             .read<OrderBloc>()
                                             .add(OrderEvent.cancelOrder(widget.order.orderId)),
-                                        child: const Text(
+                                        child: Text(
                                           'CANCELAR',
                                           style: TextStyle(
-                                            color: Color(0xFF838383),
+                                            color: textColor,
                                           ),
                                         ),
                                       ),

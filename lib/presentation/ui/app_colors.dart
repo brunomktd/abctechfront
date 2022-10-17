@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+Color primaryColor = const Color(0xFF9B59B6);
+Color textColor = const Color(0xFF838383);
+
 MaterialColor createMaterialColor(Color color) {
   final strengths = <double>[.05];
   final Map<int, Color> swatch = {};

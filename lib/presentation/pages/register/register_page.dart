@@ -7,6 +7,7 @@ import 'package:abctechfront/injection.dart';
 import 'package:abctechfront/presentation/pages/register/widgets/details.dart';
 import 'package:abctechfront/presentation/ui/abc_tech_bar.dart';
 import 'package:abctechfront/presentation/ui/app_alerts.dart';
+import 'package:abctechfront/presentation/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_awesome_select/flutter_awesome_select.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -60,13 +61,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         Theme(
                           data: Theme.of(context).copyWith(
-                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
-                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            hoverColor: primaryColor.withOpacity(0.2),
+                            highlightColor: primaryColor.withOpacity(0.2),
                           ),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(60),
-                              side: const BorderSide(color: Color(0xFF9B59B6)),
+                              side: BorderSide(color: primaryColor),
                             ),
                             clipBehavior: Clip.antiAlias,
                             elevation: 0,
@@ -75,15 +76,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                 value,
                                 hideValue: true,
                                 dense: true,
-                                trailing: const Icon(
+                                trailing: Icon(
                                   Icons.person,
                                   size: 30,
-                                  color: Color(0xFF9B59B6),
+                                  color: primaryColor,
                                 ),
-                                title: const Text(
+                                title: Text(
                                   'CLIENTE',
                                   style: TextStyle(
-                                    color: Color(0xFF9B59B6),
+                                    color: primaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -121,13 +122,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         Theme(
                           data: Theme.of(context).copyWith(
-                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
-                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            hoverColor: primaryColor.withOpacity(0.2),
+                            highlightColor: primaryColor.withOpacity(0.2),
                           ),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(60),
-                              side: const BorderSide(color: Color(0xFF9B59B6)),
+                              side: BorderSide(color: primaryColor),
                             ),
                             clipBehavior: Clip.antiAlias,
                             elevation: 0,
@@ -136,15 +137,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                 value,
                                 hideValue: true,
                                 dense: true,
-                                trailing: const Icon(
+                                trailing: Icon(
                                   Icons.handyman_rounded,
                                   size: 28,
-                                  color: Color(0xFF9B59B6),
+                                  color: primaryColor,
                                 ),
-                                title: const Text(
+                                title: Text(
                                   'SERVIÇOS',
                                   style: TextStyle(
-                                    color: Color(0xFF9B59B6),
+                                    color: primaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -182,13 +183,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         Theme(
                           data: Theme.of(context).copyWith(
-                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
-                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            hoverColor: primaryColor.withOpacity(0.2),
+                            highlightColor: primaryColor.withOpacity(0.2),
                           ),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(60),
-                              side: const BorderSide(color: Color(0xFF9B59B6)),
+                              side: BorderSide(color: primaryColor),
                             ),
                             clipBehavior: Clip.antiAlias,
                             elevation: 0,
@@ -197,15 +198,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                 value,
                                 dense: true,
                                 hideValue: true,
-                                trailing: const Icon(
+                                trailing: Icon(
                                   Icons.manage_accounts_rounded,
                                   size: 30,
-                                  color: Color(0xFF9B59B6),
+                                  color: primaryColor,
                                 ),
-                                title: const Text(
+                                title: Text(
                                   'TÉCNICO RESPONSÁVEL',
                                   style: TextStyle(
-                                    color: Color(0xFF9B59B6),
+                                    color: primaryColor,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                   ),

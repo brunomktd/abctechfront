@@ -1,7 +1,8 @@
 import 'package:abctechfront/application/order/order_bloc.dart';
 import 'package:abctechfront/injection.dart';
 import 'package:abctechfront/presentation/pages/order/order_page.dart';
-import 'package:abctechfront/presentation/ui/app_swatch.dart';
+import 'package:abctechfront/presentation/ui/app_colors.dart';
+import 'package:abctechfront/presentation/ui/app_mobile_info.dart';
 import 'package:abctechfront/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,17 +12,17 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterWebFrame(
-      maximumSize: Size(475.0, Size.infinite.height),
+      maximumSize: mobileSize,
       backgroundColor: Colors.white,
       builder: (context) {
         return MaterialApp(
           title: 'ABC Tech',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: createMaterialColor(const Color(0xFF9B59B6)),
+            primarySwatch: createMaterialColor(primaryColor),
             textTheme: Theme.of(context).textTheme.apply(
-                  bodyColor: const Color(0xFF838383), //<-- SEE HERE
-                  displayColor: const Color(0xFF838383), //<-- SEE HERE
+                  bodyColor: textColor,
+                  displayColor: textColor,
                 ),
           ),
           onGenerateRoute: (settings) => routes[settings.name]!(context),

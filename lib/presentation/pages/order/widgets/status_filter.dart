@@ -1,6 +1,7 @@
 import 'package:abctechfront/application/order/order_bloc.dart';
 import 'package:abctechfront/domain/core/enums/order_status_enum.dart';
 import 'package:abctechfront/domain/core/extensions/x_dartz.dart';
+import 'package:abctechfront/presentation/ui/app_mobile_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,7 +13,7 @@ class StatusFilter extends StatelessWidget {
     return BlocBuilder<OrderBloc, OrderState>(
       builder: (context, state) {
         return Container(
-          constraints: const BoxConstraints(maxWidth: 475.0),
+          constraints: BoxConstraints(maxWidth: mobileSize.width),
           width: MediaQuery.of(context).size.width,
           child: Wrap(
             alignment: WrapAlignment.spaceEvenly,

@@ -3,7 +3,6 @@ import 'package:abctechfront/infraestructure/core/interceptors/debug_interceptor
 import 'package:abctechfront/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 @module
 abstract class InfraInjectableModule {
@@ -13,8 +12,4 @@ abstract class InfraInjectableModule {
       getIt<ConfigInterceptor>(),
       getIt<DebugInterceptor>(),
     ]);
-
-  @preResolve
-  @LazySingleton()
-  Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
 }

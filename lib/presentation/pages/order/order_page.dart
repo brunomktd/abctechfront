@@ -1,8 +1,10 @@
 import 'package:abctechfront/application/order/order_bloc.dart';
-import 'package:abctechfront/domain/core/entity/id_route_param.dart';
 import 'package:abctechfront/domain/core/extensions/x_dartz.dart';
 import 'package:abctechfront/presentation/pages/order/widgets/empty_message.dart';
+import 'package:abctechfront/presentation/pages/order/widgets/operator_filter.dart';
 import 'package:abctechfront/presentation/pages/order/widgets/order_list_item.dart';
+import 'package:abctechfront/presentation/pages/order/widgets/status_filter.dart';
+import 'package:abctechfront/presentation/ui/abc_tech_bar.dart';
 import 'package:abctechfront/presentation/ui/app_alerts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,10 +21,7 @@ class _OrderPageState extends State<OrderPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Tracker'),
-          actions: const [],
-        ),
+        appBar: const AbcTechBar(),
         body: BlocConsumer<OrderBloc, OrderState>(
           listener: (context, state) {
             state.orders.foldError(
@@ -30,51 +29,67 @@ class _OrderPageState extends State<OrderPage> {
             );
           },
           builder: (context, state) {
-            if (state.isLoading) return const Center(child: CircularProgressIndicator());
-
             final orders = state.orders.getOrDflt([]);
-            return orders.isEmpty
-                ? const EmptyMessage()
-                : Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 56, 8),
-                            child: Row(
-                              children: const [
-                                Expanded(flex: 2, child: Text('Ordem')),
-                                Expanded(flex: 2, child: Text('Técnico')),
-                                Expanded(flex: 4, child: Text('Status')),
-                              ],
-                            ),
-                          ),
-                          const Divider(color: Colors.deepPurple, thickness: 1),
-                          ListView.builder(
-                            itemCount: orders.length,
-                            shrinkWrap: true,
-                            itemBuilder: (BuildContext context, int index) {
-                              return OrderListItem(order: orders[index]);
-                            },
-                          ),
-                        ],
-                      ),
+            return Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: RefreshIndicator(
+                onRefresh: () async {
+                  context.read<OrderBloc>().add(const OrderEvent.loadOrders());
+                  return Future.delayed(
+                    const Duration(
+                      seconds: 1,
                     ),
                   );
+                },
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const OperatorFilter(),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+                        child: Text('Filtre por status:'),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        child: StatusFilter(),
+                      ),
+                      if (state.isLoading)
+                        const Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 50),
+                            child: CircularProgressIndicator(),
+                          ),
+                        ),
+                      if (orders.isEmpty && !state.isLoading) const EmptyMessage(),
+                      if (orders.isNotEmpty && !state.isLoading)
+                        ListView.builder(
+                          itemCount: orders.length,
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return OrderListItem(order: orders[index]);
+                          },
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            );
           },
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(
             Icons.add_rounded,
-            size: 45,
+            size: 30,
           ),
-          onPressed: () => Navigator.of(context)
-              .pushNamed(
-                '/register',
-                arguments: const IdRouteParam(id: 0),
-              )
-              .then(
+          onPressed: () => Navigator.of(context).pushNamed('/register').then(
                 (value) => context.read<OrderBloc>()
                   ..add(
                     const OrderEvent.loadOrders(),

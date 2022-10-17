@@ -23,6 +23,7 @@ mixin _$Order {
   DateTime get createdAt => throw _privateConstructorUsedError;
   int get operatorId => throw _privateConstructorUsedError;
   int get orderId => throw _privateConstructorUsedError;
+  Client get client => throw _privateConstructorUsedError;
   List<AssistanceCombo> get services => throw _privateConstructorUsedError;
   OrderStatus get status => throw _privateConstructorUsedError;
   Location? get start => throw _privateConstructorUsedError;
@@ -42,11 +43,13 @@ abstract class $OrderCopyWith<$Res> {
       {DateTime createdAt,
       int operatorId,
       int orderId,
+      Client client,
       List<AssistanceCombo> services,
       OrderStatus status,
       Location? start,
       Location? end});
 
+  $ClientCopyWith<$Res> get client;
   $LocationCopyWith<$Res>? get start;
   $LocationCopyWith<$Res>? get end;
 }
@@ -67,6 +70,7 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? createdAt = null,
     Object? operatorId = null,
     Object? orderId = null,
+    Object? client = null,
     Object? services = null,
     Object? status = null,
     Object? start = freezed,
@@ -85,6 +89,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int,
+      client: null == client
+          ? _value.client
+          : client // ignore: cast_nullable_to_non_nullable
+              as Client,
       services: null == services
           ? _value.services
           : services // ignore: cast_nullable_to_non_nullable
@@ -102,6 +110,14 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           : end // ignore: cast_nullable_to_non_nullable
               as Location?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClientCopyWith<$Res> get client {
+    return $ClientCopyWith<$Res>(_value.client, (value) {
+      return _then(_value.copyWith(client: value) as $Val);
+    });
   }
 
   @override
@@ -139,11 +155,14 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       {DateTime createdAt,
       int operatorId,
       int orderId,
+      Client client,
       List<AssistanceCombo> services,
       OrderStatus status,
       Location? start,
       Location? end});
 
+  @override
+  $ClientCopyWith<$Res> get client;
   @override
   $LocationCopyWith<$Res>? get start;
   @override
@@ -162,6 +181,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
     Object? createdAt = null,
     Object? operatorId = null,
     Object? orderId = null,
+    Object? client = null,
     Object? services = null,
     Object? status = null,
     Object? start = freezed,
@@ -180,6 +200,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int,
+      client: null == client
+          ? _value.client
+          : client // ignore: cast_nullable_to_non_nullable
+              as Client,
       services: null == services
           ? _value._services
           : services // ignore: cast_nullable_to_non_nullable
@@ -207,6 +231,7 @@ class _$_Order implements _Order {
       {required this.createdAt,
       required this.operatorId,
       required this.orderId,
+      required this.client,
       required final List<AssistanceCombo> services,
       required this.status,
       this.start,
@@ -222,6 +247,8 @@ class _$_Order implements _Order {
   final int operatorId;
   @override
   final int orderId;
+  @override
+  final Client client;
   final List<AssistanceCombo> _services;
   @override
   List<AssistanceCombo> get services {
@@ -238,7 +265,7 @@ class _$_Order implements _Order {
 
   @override
   String toString() {
-    return 'Order(createdAt: $createdAt, operatorId: $operatorId, orderId: $orderId, services: $services, status: $status, start: $start, end: $end)';
+    return 'Order(createdAt: $createdAt, operatorId: $operatorId, orderId: $orderId, client: $client, services: $services, status: $status, start: $start, end: $end)';
   }
 
   @override
@@ -251,6 +278,7 @@ class _$_Order implements _Order {
             (identical(other.operatorId, operatorId) ||
                 other.operatorId == operatorId) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.client, client) || other.client == client) &&
             const DeepCollectionEquality().equals(other._services, _services) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.start, start) || other.start == start) &&
@@ -259,8 +287,16 @@ class _$_Order implements _Order {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, createdAt, operatorId, orderId,
-      const DeepCollectionEquality().hash(_services), status, start, end);
+  int get hashCode => Object.hash(
+      runtimeType,
+      createdAt,
+      operatorId,
+      orderId,
+      client,
+      const DeepCollectionEquality().hash(_services),
+      status,
+      start,
+      end);
 
   @JsonKey(ignore: true)
   @override
@@ -281,6 +317,7 @@ abstract class _Order implements Order {
       {required final DateTime createdAt,
       required final int operatorId,
       required final int orderId,
+      required final Client client,
       required final List<AssistanceCombo> services,
       required final OrderStatus status,
       final Location? start,
@@ -294,6 +331,8 @@ abstract class _Order implements Order {
   int get operatorId;
   @override
   int get orderId;
+  @override
+  Client get client;
   @override
   List<AssistanceCombo> get services;
   @override

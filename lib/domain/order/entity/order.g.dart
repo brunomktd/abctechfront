@@ -10,6 +10,7 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       createdAt: DateTime.parse(json['createdAt'] as String),
       operatorId: json['operatorId'] as int,
       orderId: json['orderId'] as int,
+      client: Client.fromJson(json['client'] as Map<String, dynamic>),
       services: (json['services'] as List<dynamic>)
           .map((e) => AssistanceCombo.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -26,6 +27,7 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'operatorId': instance.operatorId,
       'orderId': instance.orderId,
+      'client': instance.client,
       'services': instance.services,
       'status': _$OrderStatusEnumMap[instance.status]!,
       'start': instance.start,

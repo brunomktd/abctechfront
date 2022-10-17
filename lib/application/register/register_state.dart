@@ -7,8 +7,10 @@ class RegisterState with _$RegisterState {
     required bool isLoading,
     required bool isSaving,
     required bool showErrors,
-    required Option<Either<Failure, List<AssistanceCombo>>> assistancesOption,
-    required Option<Either<Failure, Unit>> saveOption,
+    required Option<Either<Failure, List<AssistanceCombo>>> assistances,
+    required Option<Either<Failure, List<Client>>> clients,
+    required Option<Either<Failure, List<Operator>>> operators,
+    required Option<Either<Failure, Unit>> save,
   }) = _RegisterState;
 
   factory RegisterState.initial() => RegisterState(
@@ -16,7 +18,9 @@ class RegisterState with _$RegisterState {
         isLoading: true,
         isSaving: false,
         showErrors: false,
-        assistancesOption: none(),
-        saveOption: none(),
+        assistances: none(),
+        clients: none(),
+        operators: none(),
+        save: none(),
       );
 }

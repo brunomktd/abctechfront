@@ -16,10 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OrderDto {
-  Id get clientId => throw _privateConstructorUsedError;
-  Id get operatorId => throw _privateConstructorUsedError;
-  CommonString get orderNumber => throw _privateConstructorUsedError;
-  List<Id> get services => throw _privateConstructorUsedError;
+  Client get client => throw _privateConstructorUsedError;
+  Operator get serviceOperator => throw _privateConstructorUsedError;
+  List<AssistanceCombo> get services => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderDtoCopyWith<OrderDto> get copyWith =>
@@ -32,10 +31,12 @@ abstract class $OrderDtoCopyWith<$Res> {
       _$OrderDtoCopyWithImpl<$Res, OrderDto>;
   @useResult
   $Res call(
-      {Id clientId,
-      Id operatorId,
-      CommonString orderNumber,
-      List<Id> services});
+      {Client client,
+      Operator serviceOperator,
+      List<AssistanceCombo> services});
+
+  $ClientCopyWith<$Res> get client;
+  $OperatorCopyWith<$Res> get serviceOperator;
 }
 
 /// @nodoc
@@ -51,29 +52,40 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clientId = null,
-    Object? operatorId = null,
-    Object? orderNumber = null,
+    Object? client = null,
+    Object? serviceOperator = null,
     Object? services = null,
   }) {
     return _then(_value.copyWith(
-      clientId: null == clientId
-          ? _value.clientId
-          : clientId // ignore: cast_nullable_to_non_nullable
-              as Id,
-      operatorId: null == operatorId
-          ? _value.operatorId
-          : operatorId // ignore: cast_nullable_to_non_nullable
-              as Id,
-      orderNumber: null == orderNumber
-          ? _value.orderNumber
-          : orderNumber // ignore: cast_nullable_to_non_nullable
-              as CommonString,
+      client: null == client
+          ? _value.client
+          : client // ignore: cast_nullable_to_non_nullable
+              as Client,
+      serviceOperator: null == serviceOperator
+          ? _value.serviceOperator
+          : serviceOperator // ignore: cast_nullable_to_non_nullable
+              as Operator,
       services: null == services
           ? _value.services
           : services // ignore: cast_nullable_to_non_nullable
-              as List<Id>,
+              as List<AssistanceCombo>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClientCopyWith<$Res> get client {
+    return $ClientCopyWith<$Res>(_value.client, (value) {
+      return _then(_value.copyWith(client: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OperatorCopyWith<$Res> get serviceOperator {
+    return $OperatorCopyWith<$Res>(_value.serviceOperator, (value) {
+      return _then(_value.copyWith(serviceOperator: value) as $Val);
+    });
   }
 }
 
@@ -85,10 +97,14 @@ abstract class _$$_OrderDtoCopyWith<$Res> implements $OrderDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {Id clientId,
-      Id operatorId,
-      CommonString orderNumber,
-      List<Id> services});
+      {Client client,
+      Operator serviceOperator,
+      List<AssistanceCombo> services});
+
+  @override
+  $ClientCopyWith<$Res> get client;
+  @override
+  $OperatorCopyWith<$Res> get serviceOperator;
 }
 
 /// @nodoc
@@ -102,28 +118,23 @@ class __$$_OrderDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? clientId = null,
-    Object? operatorId = null,
-    Object? orderNumber = null,
+    Object? client = null,
+    Object? serviceOperator = null,
     Object? services = null,
   }) {
     return _then(_$_OrderDto(
-      clientId: null == clientId
-          ? _value.clientId
-          : clientId // ignore: cast_nullable_to_non_nullable
-              as Id,
-      operatorId: null == operatorId
-          ? _value.operatorId
-          : operatorId // ignore: cast_nullable_to_non_nullable
-              as Id,
-      orderNumber: null == orderNumber
-          ? _value.orderNumber
-          : orderNumber // ignore: cast_nullable_to_non_nullable
-              as CommonString,
+      client: null == client
+          ? _value.client
+          : client // ignore: cast_nullable_to_non_nullable
+              as Client,
+      serviceOperator: null == serviceOperator
+          ? _value.serviceOperator
+          : serviceOperator // ignore: cast_nullable_to_non_nullable
+              as Operator,
       services: null == services
           ? _value._services
           : services // ignore: cast_nullable_to_non_nullable
-              as List<Id>,
+              as List<AssistanceCombo>,
     ));
   }
 }
@@ -132,29 +143,26 @@ class __$$_OrderDtoCopyWithImpl<$Res>
 
 class _$_OrderDto extends _OrderDto {
   const _$_OrderDto(
-      {required this.clientId,
-      required this.operatorId,
-      required this.orderNumber,
-      required final List<Id> services})
+      {required this.client,
+      required this.serviceOperator,
+      required final List<AssistanceCombo> services})
       : _services = services,
         super._();
 
   @override
-  final Id clientId;
+  final Client client;
   @override
-  final Id operatorId;
+  final Operator serviceOperator;
+  final List<AssistanceCombo> _services;
   @override
-  final CommonString orderNumber;
-  final List<Id> _services;
-  @override
-  List<Id> get services {
+  List<AssistanceCombo> get services {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_services);
   }
 
   @override
   String toString() {
-    return 'OrderDto(clientId: $clientId, operatorId: $operatorId, orderNumber: $orderNumber, services: $services)';
+    return 'OrderDto(client: $client, serviceOperator: $serviceOperator, services: $services)';
   }
 
   @override
@@ -162,18 +170,15 @@ class _$_OrderDto extends _OrderDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OrderDto &&
-            (identical(other.clientId, clientId) ||
-                other.clientId == clientId) &&
-            (identical(other.operatorId, operatorId) ||
-                other.operatorId == operatorId) &&
-            (identical(other.orderNumber, orderNumber) ||
-                other.orderNumber == orderNumber) &&
+            (identical(other.client, client) || other.client == client) &&
+            (identical(other.serviceOperator, serviceOperator) ||
+                other.serviceOperator == serviceOperator) &&
             const DeepCollectionEquality().equals(other._services, _services));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, clientId, operatorId,
-      orderNumber, const DeepCollectionEquality().hash(_services));
+  int get hashCode => Object.hash(runtimeType, client, serviceOperator,
+      const DeepCollectionEquality().hash(_services));
 
   @JsonKey(ignore: true)
   @override
@@ -184,20 +189,17 @@ class _$_OrderDto extends _OrderDto {
 
 abstract class _OrderDto extends OrderDto {
   const factory _OrderDto(
-      {required final Id clientId,
-      required final Id operatorId,
-      required final CommonString orderNumber,
-      required final List<Id> services}) = _$_OrderDto;
+      {required final Client client,
+      required final Operator serviceOperator,
+      required final List<AssistanceCombo> services}) = _$_OrderDto;
   const _OrderDto._() : super._();
 
   @override
-  Id get clientId;
+  Client get client;
   @override
-  Id get operatorId;
+  Operator get serviceOperator;
   @override
-  CommonString get orderNumber;
-  @override
-  List<Id> get services;
+  List<AssistanceCombo> get services;
   @override
   @JsonKey(ignore: true)
   _$$_OrderDtoCopyWith<_$_OrderDto> get copyWith =>

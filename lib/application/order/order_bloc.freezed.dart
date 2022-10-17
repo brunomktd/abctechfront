@@ -21,8 +21,10 @@ mixin _$OrderEvent {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,8 +32,10 @@ mixin _$OrderEvent {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,8 +43,10 @@ mixin _$OrderEvent {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,8 +55,10 @@ mixin _$OrderEvent {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,8 +66,10 @@ mixin _$OrderEvent {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,8 +77,10 @@ mixin _$OrderEvent {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,8 +145,10 @@ class _$InitGeolocation implements InitGeolocation {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) {
     return initGeolocation();
   }
@@ -145,8 +159,10 @@ class _$InitGeolocation implements InitGeolocation {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) {
     return initGeolocation?.call();
   }
@@ -157,8 +173,10 @@ class _$InitGeolocation implements InitGeolocation {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) {
     if (initGeolocation != null) {
@@ -173,8 +191,10 @@ class _$InitGeolocation implements InitGeolocation {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) {
     return initGeolocation(this);
   }
@@ -185,8 +205,10 @@ class _$InitGeolocation implements InitGeolocation {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) {
     return initGeolocation?.call(this);
   }
@@ -197,8 +219,10 @@ class _$InitGeolocation implements InitGeolocation {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) {
     if (initGeolocation != null) {
@@ -253,8 +277,10 @@ class _$LoadOrders implements LoadOrders {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) {
     return loadOrders();
   }
@@ -265,8 +291,10 @@ class _$LoadOrders implements LoadOrders {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) {
     return loadOrders?.call();
   }
@@ -277,8 +305,10 @@ class _$LoadOrders implements LoadOrders {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) {
     if (loadOrders != null) {
@@ -293,8 +323,10 @@ class _$LoadOrders implements LoadOrders {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) {
     return loadOrders(this);
   }
@@ -305,8 +337,10 @@ class _$LoadOrders implements LoadOrders {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) {
     return loadOrders?.call(this);
   }
@@ -317,8 +351,10 @@ class _$LoadOrders implements LoadOrders {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) {
     if (loadOrders != null) {
@@ -399,8 +435,10 @@ class _$StatusChanged implements StatusChanged {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) {
     return statusChanged(status);
   }
@@ -411,8 +449,10 @@ class _$StatusChanged implements StatusChanged {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) {
     return statusChanged?.call(status);
   }
@@ -423,8 +463,10 @@ class _$StatusChanged implements StatusChanged {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) {
     if (statusChanged != null) {
@@ -439,8 +481,10 @@ class _$StatusChanged implements StatusChanged {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) {
     return statusChanged(this);
   }
@@ -451,8 +495,10 @@ class _$StatusChanged implements StatusChanged {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) {
     return statusChanged?.call(this);
   }
@@ -463,8 +509,10 @@ class _$StatusChanged implements StatusChanged {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) {
     if (statusChanged != null) {
@@ -480,6 +528,181 @@ abstract class StatusChanged implements OrderEvent {
   OrderStatus get status;
   @JsonKey(ignore: true)
   _$$StatusChangedCopyWith<_$StatusChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OperatorChangedCopyWith<$Res> {
+  factory _$$OperatorChangedCopyWith(
+          _$OperatorChanged value, $Res Function(_$OperatorChanged) then) =
+      __$$OperatorChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Operator serviceOperator});
+
+  $OperatorCopyWith<$Res> get serviceOperator;
+}
+
+/// @nodoc
+class __$$OperatorChangedCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$OperatorChanged>
+    implements _$$OperatorChangedCopyWith<$Res> {
+  __$$OperatorChangedCopyWithImpl(
+      _$OperatorChanged _value, $Res Function(_$OperatorChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? serviceOperator = null,
+  }) {
+    return _then(_$OperatorChanged(
+      null == serviceOperator
+          ? _value.serviceOperator
+          : serviceOperator // ignore: cast_nullable_to_non_nullable
+              as Operator,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OperatorCopyWith<$Res> get serviceOperator {
+    return $OperatorCopyWith<$Res>(_value.serviceOperator, (value) {
+      return _then(_value.copyWith(serviceOperator: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OperatorChanged implements OperatorChanged {
+  const _$OperatorChanged(this.serviceOperator);
+
+  @override
+  final Operator serviceOperator;
+
+  @override
+  String toString() {
+    return 'OrderEvent.operatorChanged(serviceOperator: $serviceOperator)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OperatorChanged &&
+            (identical(other.serviceOperator, serviceOperator) ||
+                other.serviceOperator == serviceOperator));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, serviceOperator);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OperatorChangedCopyWith<_$OperatorChanged> get copyWith =>
+      __$$OperatorChangedCopyWithImpl<_$OperatorChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initGeolocation,
+    required TResult Function() loadOrders,
+    required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function(int orderId) startOrder,
+    required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
+  }) {
+    return operatorChanged(serviceOperator);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initGeolocation,
+    TResult? Function()? loadOrders,
+    TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function(int orderId)? startOrder,
+    TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
+  }) {
+    return operatorChanged?.call(serviceOperator);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initGeolocation,
+    TResult Function()? loadOrders,
+    TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function(int orderId)? startOrder,
+    TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (operatorChanged != null) {
+      return operatorChanged(serviceOperator);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitGeolocation value) initGeolocation,
+    required TResult Function(LoadOrders value) loadOrders,
+    required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(StartOrder value) startOrder,
+    required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+  }) {
+    return operatorChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitGeolocation value)? initGeolocation,
+    TResult? Function(LoadOrders value)? loadOrders,
+    TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(StartOrder value)? startOrder,
+    TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+  }) {
+    return operatorChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitGeolocation value)? initGeolocation,
+    TResult Function(LoadOrders value)? loadOrders,
+    TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(StartOrder value)? startOrder,
+    TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (operatorChanged != null) {
+      return operatorChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OperatorChanged implements OrderEvent {
+  const factory OperatorChanged(final Operator serviceOperator) =
+      _$OperatorChanged;
+
+  Operator get serviceOperator;
+  @JsonKey(ignore: true)
+  _$$OperatorChangedCopyWith<_$OperatorChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -550,8 +773,10 @@ class _$StartOrder implements StartOrder {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) {
     return startOrder(orderId);
   }
@@ -562,8 +787,10 @@ class _$StartOrder implements StartOrder {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) {
     return startOrder?.call(orderId);
   }
@@ -574,8 +801,10 @@ class _$StartOrder implements StartOrder {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) {
     if (startOrder != null) {
@@ -590,8 +819,10 @@ class _$StartOrder implements StartOrder {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) {
     return startOrder(this);
   }
@@ -602,8 +833,10 @@ class _$StartOrder implements StartOrder {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) {
     return startOrder?.call(this);
   }
@@ -614,8 +847,10 @@ class _$StartOrder implements StartOrder {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) {
     if (startOrder != null) {
@@ -700,8 +935,10 @@ class _$EndOrder implements EndOrder {
     required TResult Function() initGeolocation,
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
   }) {
     return endOrder(orderId);
   }
@@ -712,8 +949,10 @@ class _$EndOrder implements EndOrder {
     TResult? Function()? initGeolocation,
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
   }) {
     return endOrder?.call(orderId);
   }
@@ -724,8 +963,10 @@ class _$EndOrder implements EndOrder {
     TResult Function()? initGeolocation,
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
     required TResult orElse(),
   }) {
     if (endOrder != null) {
@@ -740,8 +981,10 @@ class _$EndOrder implements EndOrder {
     required TResult Function(InitGeolocation value) initGeolocation,
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
   }) {
     return endOrder(this);
   }
@@ -752,8 +995,10 @@ class _$EndOrder implements EndOrder {
     TResult? Function(InitGeolocation value)? initGeolocation,
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
   }) {
     return endOrder?.call(this);
   }
@@ -764,8 +1009,10 @@ class _$EndOrder implements EndOrder {
     TResult Function(InitGeolocation value)? initGeolocation,
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
     required TResult orElse(),
   }) {
     if (endOrder != null) {
@@ -785,10 +1032,178 @@ abstract class EndOrder implements OrderEvent {
 }
 
 /// @nodoc
+abstract class _$$CancelOrderCopyWith<$Res> {
+  factory _$$CancelOrderCopyWith(
+          _$CancelOrder value, $Res Function(_$CancelOrder) then) =
+      __$$CancelOrderCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int orderId});
+}
+
+/// @nodoc
+class __$$CancelOrderCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$CancelOrder>
+    implements _$$CancelOrderCopyWith<$Res> {
+  __$$CancelOrderCopyWithImpl(
+      _$CancelOrder _value, $Res Function(_$CancelOrder) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderId = null,
+  }) {
+    return _then(_$CancelOrder(
+      null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CancelOrder implements CancelOrder {
+  const _$CancelOrder(this.orderId);
+
+  @override
+  final int orderId;
+
+  @override
+  String toString() {
+    return 'OrderEvent.cancelOrder(orderId: $orderId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CancelOrder &&
+            (identical(other.orderId, orderId) || other.orderId == orderId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CancelOrderCopyWith<_$CancelOrder> get copyWith =>
+      __$$CancelOrderCopyWithImpl<_$CancelOrder>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initGeolocation,
+    required TResult Function() loadOrders,
+    required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function(int orderId) startOrder,
+    required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
+  }) {
+    return cancelOrder(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initGeolocation,
+    TResult? Function()? loadOrders,
+    TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function(int orderId)? startOrder,
+    TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
+  }) {
+    return cancelOrder?.call(orderId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initGeolocation,
+    TResult Function()? loadOrders,
+    TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function(int orderId)? startOrder,
+    TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (cancelOrder != null) {
+      return cancelOrder(orderId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitGeolocation value) initGeolocation,
+    required TResult Function(LoadOrders value) loadOrders,
+    required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(StartOrder value) startOrder,
+    required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+  }) {
+    return cancelOrder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitGeolocation value)? initGeolocation,
+    TResult? Function(LoadOrders value)? loadOrders,
+    TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(StartOrder value)? startOrder,
+    TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+  }) {
+    return cancelOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitGeolocation value)? initGeolocation,
+    TResult Function(LoadOrders value)? loadOrders,
+    TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(StartOrder value)? startOrder,
+    TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (cancelOrder != null) {
+      return cancelOrder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CancelOrder implements OrderEvent {
+  const factory CancelOrder(final int orderId) = _$CancelOrder;
+
+  int get orderId;
+  @JsonKey(ignore: true)
+  _$$CancelOrderCopyWith<_$CancelOrder> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$OrderState {
   bool get isLoading => throw _privateConstructorUsedError;
   OrderStatus get status => throw _privateConstructorUsedError;
+  Operator get serviceOperator => throw _privateConstructorUsedError;
   Option<Either<Failure, List<Order>>> get orders =>
+      throw _privateConstructorUsedError;
+  Option<Either<Failure, List<Client>>> get clients =>
+      throw _privateConstructorUsedError;
+  Option<Either<Failure, List<Operator>>> get operators =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -805,7 +1220,12 @@ abstract class $OrderStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       OrderStatus status,
-      Option<Either<Failure, List<Order>>> orders});
+      Operator serviceOperator,
+      Option<Either<Failure, List<Order>>> orders,
+      Option<Either<Failure, List<Client>>> clients,
+      Option<Either<Failure, List<Operator>>> operators});
+
+  $OperatorCopyWith<$Res> get serviceOperator;
 }
 
 /// @nodoc
@@ -823,7 +1243,10 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
   $Res call({
     Object? isLoading = null,
     Object? status = null,
+    Object? serviceOperator = null,
     Object? orders = null,
+    Object? clients = null,
+    Object? operators = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -834,11 +1257,31 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as OrderStatus,
+      serviceOperator: null == serviceOperator
+          ? _value.serviceOperator
+          : serviceOperator // ignore: cast_nullable_to_non_nullable
+              as Operator,
       orders: null == orders
           ? _value.orders
           : orders // ignore: cast_nullable_to_non_nullable
               as Option<Either<Failure, List<Order>>>,
+      clients: null == clients
+          ? _value.clients
+          : clients // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<Client>>>,
+      operators: null == operators
+          ? _value.operators
+          : operators // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<Operator>>>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OperatorCopyWith<$Res> get serviceOperator {
+    return $OperatorCopyWith<$Res>(_value.serviceOperator, (value) {
+      return _then(_value.copyWith(serviceOperator: value) as $Val);
+    });
   }
 }
 
@@ -853,7 +1296,13 @@ abstract class _$$_OrderStateCopyWith<$Res>
   $Res call(
       {bool isLoading,
       OrderStatus status,
-      Option<Either<Failure, List<Order>>> orders});
+      Operator serviceOperator,
+      Option<Either<Failure, List<Order>>> orders,
+      Option<Either<Failure, List<Client>>> clients,
+      Option<Either<Failure, List<Operator>>> operators});
+
+  @override
+  $OperatorCopyWith<$Res> get serviceOperator;
 }
 
 /// @nodoc
@@ -869,7 +1318,10 @@ class __$$_OrderStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? status = null,
+    Object? serviceOperator = null,
     Object? orders = null,
+    Object? clients = null,
+    Object? operators = null,
   }) {
     return _then(_$_OrderState(
       isLoading: null == isLoading
@@ -880,10 +1332,22 @@ class __$$_OrderStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as OrderStatus,
+      serviceOperator: null == serviceOperator
+          ? _value.serviceOperator
+          : serviceOperator // ignore: cast_nullable_to_non_nullable
+              as Operator,
       orders: null == orders
           ? _value.orders
           : orders // ignore: cast_nullable_to_non_nullable
               as Option<Either<Failure, List<Order>>>,
+      clients: null == clients
+          ? _value.clients
+          : clients // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<Client>>>,
+      operators: null == operators
+          ? _value.operators
+          : operators // ignore: cast_nullable_to_non_nullable
+              as Option<Either<Failure, List<Operator>>>,
     ));
   }
 }
@@ -892,18 +1356,29 @@ class __$$_OrderStateCopyWithImpl<$Res>
 
 class _$_OrderState implements _OrderState {
   const _$_OrderState(
-      {required this.isLoading, required this.status, required this.orders});
+      {required this.isLoading,
+      required this.status,
+      required this.serviceOperator,
+      required this.orders,
+      required this.clients,
+      required this.operators});
 
   @override
   final bool isLoading;
   @override
   final OrderStatus status;
   @override
+  final Operator serviceOperator;
+  @override
   final Option<Either<Failure, List<Order>>> orders;
+  @override
+  final Option<Either<Failure, List<Client>>> clients;
+  @override
+  final Option<Either<Failure, List<Operator>>> operators;
 
   @override
   String toString() {
-    return 'OrderState(isLoading: $isLoading, status: $status, orders: $orders)';
+    return 'OrderState(isLoading: $isLoading, status: $status, serviceOperator: $serviceOperator, orders: $orders, clients: $clients, operators: $operators)';
   }
 
   @override
@@ -914,11 +1389,17 @@ class _$_OrderState implements _OrderState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.orders, orders) || other.orders == orders));
+            (identical(other.serviceOperator, serviceOperator) ||
+                other.serviceOperator == serviceOperator) &&
+            (identical(other.orders, orders) || other.orders == orders) &&
+            (identical(other.clients, clients) || other.clients == clients) &&
+            (identical(other.operators, operators) ||
+                other.operators == operators));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, status, orders);
+  int get hashCode => Object.hash(runtimeType, isLoading, status,
+      serviceOperator, orders, clients, operators);
 
   @JsonKey(ignore: true)
   @override
@@ -931,7 +1412,10 @@ abstract class _OrderState implements OrderState {
   const factory _OrderState(
           {required final bool isLoading,
           required final OrderStatus status,
-          required final Option<Either<Failure, List<Order>>> orders}) =
+          required final Operator serviceOperator,
+          required final Option<Either<Failure, List<Order>>> orders,
+          required final Option<Either<Failure, List<Client>>> clients,
+          required final Option<Either<Failure, List<Operator>>> operators}) =
       _$_OrderState;
 
   @override
@@ -939,7 +1423,13 @@ abstract class _OrderState implements OrderState {
   @override
   OrderStatus get status;
   @override
+  Operator get serviceOperator;
+  @override
   Option<Either<Failure, List<Order>>> get orders;
+  @override
+  Option<Either<Failure, List<Client>>> get clients;
+  @override
+  Option<Either<Failure, List<Operator>>> get operators;
   @override
   @JsonKey(ignore: true)
   _$$_OrderStateCopyWith<_$_OrderState> get copyWith =>

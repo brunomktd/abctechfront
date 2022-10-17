@@ -49,6 +49,14 @@ extension StringX on String {
   String capitalize() {
     return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
   }
+
+  String dfltIfEmpty(String dflt) {
+    if (this == '') {
+      return dflt;
+    }
+
+    return this;
+  }
 }
 
 extension BoolX on bool {

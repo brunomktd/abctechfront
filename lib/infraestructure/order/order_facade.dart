@@ -23,8 +23,8 @@ class OrderFacade implements IOrderFacade {
       final response = await _http.get<List>(
         '/orders',
         queryParameters: {
-          "operatorId": operatorId,
-          "status": status.value,
+          "operatorId": operatorId > 0 ? operatorId : null,
+          "status": status.value < 4 ? status.value : null,
         },
       );
       final orders = response.data!.map((o) => Order.fromJson(o as Map<String, dynamic>)).toList();

@@ -1,8 +1,10 @@
-import 'package:abctechfront/domain/core/entity/value_objects.dart';
+import 'package:abctechfront/domain/assistance/entity/assistance_combo.dart';
+import 'package:abctechfront/domain/client/entity/client.dart';
 import 'package:abctechfront/domain/core/validation/validation_errors.dart';
+import 'package:abctechfront/domain/core/validation/value_validators.dart';
+import 'package:abctechfront/domain/operator/entity/operator.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:uuid/uuid.dart';
 
 part 'order_dto.freezed.dart';
 
@@ -11,33 +13,28 @@ class OrderDto with _$OrderDto {
   const OrderDto._();
 
   const factory OrderDto({
-    required Id clientId,
-    required Id operatorId,
-    required CommonString orderNumber,
-    required List<Id> services,
+    required Client client,
+    required Operator serviceOperator,
+    required List<AssistanceCombo> services,
   }) = _OrderDto;
 
   factory OrderDto.empty() => OrderDto(
-        clientId: Id(1),
-        operatorId: Id(1),
-        orderNumber: CommonString(const Uuid().v4()),
+        client: Client.empty(),
+        serviceOperator: Operator.empty(),
         services: List.empty(),
       );
 
   Map<String, dynamic> toMap() => {
-        "clientId": clientId.getOrCrash(),
-        "operatorId": operatorId.getOrCrash(),
-        "services": services.map((e) => e.getOrCrash()).toList()
+        "clientId": client.id,
+        "operatorId": serviceOperator.operatorId,
+        "services": services.map((e) => e.id).toList()
       };
 }
 
 extension OrderDtoX on OrderDto {
   Option<ValidationError<dynamic>> get failureOption {
-    return clientId.failureOrUnit
-        .andThen(operatorId.failureOrUnit)
-        .andThen(
-          services.isEmpty ? left(ValidationError.emptyList(failedValue: services)) : right(unit),
-        )
-        .fold((f) => some(f), (_) => none());
+    return client.failureOption.andThen(serviceOperator.failureOption).andThen(
+          validateListNotEmpty(services).fold((f) => some(f), (_) => none()),
+        );
   }
 }

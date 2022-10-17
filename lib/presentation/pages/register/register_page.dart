@@ -1,12 +1,15 @@
 import 'package:abctechfront/application/register/register_bloc.dart';
 import 'package:abctechfront/domain/assistance/entity/assistance_combo.dart';
-import 'package:abctechfront/domain/core/entity/id_route_param.dart';
+import 'package:abctechfront/domain/client/entity/client.dart';
 import 'package:abctechfront/domain/core/extensions/x_dartz.dart';
+import 'package:abctechfront/domain/operator/entity/operator.dart';
 import 'package:abctechfront/injection.dart';
+import 'package:abctechfront/presentation/pages/register/widgets/details.dart';
+import 'package:abctechfront/presentation/ui/abc_tech_bar.dart';
 import 'package:abctechfront/presentation/ui/app_alerts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_select/flutter_awesome_select.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -18,89 +21,232 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
-    final params = ModalRoute.of(context)!.settings.arguments! as IdRouteParam;
-
     return BlocProvider(
-      create: (context) => getIt.get<RegisterBloc>()..add(const RegisterEvent.loadAssistances()),
+      create: (context) => getIt.get<RegisterBloc>()..add(const RegisterEvent.initScreen()),
       child: Builder(
         builder: (context) {
           return SafeArea(
             child: Scaffold(
-              appBar: AppBar(
-                title: Text('${params.id == 0 ? 'Nova' : 'Consultar'} ordem de serviço'),
-                actions: const [],
-              ),
+              appBar: const AbcTechBar(),
               body: BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) => {
-                  state.saveOption.foldResponse(
+                  state.save.foldResponse(
                     (success) => Navigator.of(context).pop(),
                     (failure) =>
                         AppAlert.createError(message: failure.errors.first.message).show(context),
-                  )
+                  ),
                 },
                 builder: (context, state) {
                   if (state.isLoading) return const Center(child: CircularProgressIndicator());
 
                   return Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            hintText: 'Chave',
-                            labelText: 'Chave',
-                          ),
-                          initialValue: state.form.orderNumber.getOrElse(''),
-                          enabled: false,
-                          autocorrect: false,
-                        ),
                         const SizedBox(
-                          height: 32,
+                          height: 16,
                         ),
-                        MultiSelectDialogField(
-                          items: context
-                              .read<RegisterBloc>()
-                              .state
-                              .assistancesOption
-                              .getOrDflt([])
-                              .map((e) => MultiSelectItem(e, e.name))
-                              .toList(),
-                          title: const Text("Serviços"),
-                          selectedColor: Colors.deepPurpleAccent,
-                          decoration: BoxDecoration(
-                            color: Colors.deepPurpleAccent.withOpacity(0.1),
-                            borderRadius: const BorderRadius.all(Radius.circular(10)),
-                            border: Border.all(
-                              color: Colors.deepPurpleAccent,
-                              width: 2,
+                        const Text(
+                          'NOVA ORDEM DE SERVIÇO',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 24),
+                          child: Details(),
+                        ),
+                        Theme(
+                          data: Theme.of(context).copyWith(
+                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                          ),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(60),
+                              side: const BorderSide(color: Color(0xFF9B59B6)),
                             ),
-                          ),
-                          buttonIcon: Icon(
-                            Icons.engineering,
-                            color: Colors.deepPurpleAccent[700],
-                          ),
-                          buttonText: Text(
-                            "Serviços",
-                            style: TextStyle(
-                              color: Colors.deepPurpleAccent[700],
-                              fontSize: 16,
-                            ),
-                          ),
-                          onConfirm: (List<AssistanceCombo> results) {
-                            context.read<RegisterBloc>().add(
-                                  RegisterEvent.assistancesChanged(
-                                    results.map((AssistanceCombo e) => e.id).toList(),
+                            clipBehavior: Clip.antiAlias,
+                            elevation: 0,
+                            child: SmartSelect<Client>.single(
+                              tileBuilder: (context, value) => S2Tile.fromState(
+                                value,
+                                hideValue: true,
+                                dense: true,
+                                trailing: const Icon(
+                                  Icons.person,
+                                  size: 30,
+                                  color: Color(0xFF9B59B6),
+                                ),
+                                title: const Text(
+                                  'CLIENTE',
+                                  style: TextStyle(
+                                    color: Color(0xFF9B59B6),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                );
-                          },
-                          validator: (_) {
-                            return context.read<RegisterBloc>().state.form.services.isEmpty
+                                ),
+                              ),
+                              title: 'CLIENTE',
+                              modalType: S2ModalType.bottomSheet,
+                              selectedValue: context.read<RegisterBloc>().state.form.client,
+                              choiceItems: context
+                                  .read<RegisterBloc>()
+                                  .state
+                                  .clients
+                                  .getOrDflt([])
+                                  .map((e) => S2Choice(value: e, title: e.name))
+                                  .toList(),
+                              onChange: (selection) => {
+                                context.read<RegisterBloc>().add(
+                                      RegisterEvent.clientChanged(
+                                        selection.value,
+                                      ),
+                                    )
+                              },
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                          child: Text(
+                            state.showErrors &&
+                                    context.read<RegisterBloc>().state.form.client.id == 0
+                                ? 'Selecione um cliente'
+                                : '',
+                            style: const TextStyle(color: Colors.red),
+                          ),
+                        ),
+                        Theme(
+                          data: Theme.of(context).copyWith(
+                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                          ),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(60),
+                              side: const BorderSide(color: Color(0xFF9B59B6)),
+                            ),
+                            clipBehavior: Clip.antiAlias,
+                            elevation: 0,
+                            child: SmartSelect<AssistanceCombo>.multiple(
+                              tileBuilder: (context, value) => S2Tile.fromState(
+                                value,
+                                hideValue: true,
+                                dense: true,
+                                trailing: const Icon(
+                                  Icons.handyman_rounded,
+                                  size: 28,
+                                  color: Color(0xFF9B59B6),
+                                ),
+                                title: const Text(
+                                  'SERVIÇOS',
+                                  style: TextStyle(
+                                    color: Color(0xFF9B59B6),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              title: 'SERVIÇOS',
+                              modalType: S2ModalType.bottomSheet,
+                              selectedValue: context.read<RegisterBloc>().state.form.services,
+                              choiceItems: context
+                                  .read<RegisterBloc>()
+                                  .state
+                                  .assistances
+                                  .getOrDflt([])
+                                  .map((e) => S2Choice(value: e, title: e.name))
+                                  .toList(),
+                              onChange: (selection) => {
+                                context.read<RegisterBloc>().add(
+                                      RegisterEvent.assistancesChanged(
+                                        selection.value,
+                                      ),
+                                    )
+                              },
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                          child: Text(
+                            state.showErrors &&
+                                    context.read<RegisterBloc>().state.form.services.isEmpty
                                 ? 'Selecione um serviço'
-                                : '';
-                          },
-                          autovalidateMode: state.showErrors
-                              ? AutovalidateMode.always
-                              : AutovalidateMode.disabled,
+                                : '',
+                            style: const TextStyle(color: Colors.red),
+                          ),
+                        ),
+                        Theme(
+                          data: Theme.of(context).copyWith(
+                            hoverColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                            highlightColor: const Color(0xFF9B59B6).withOpacity(0.2),
+                          ),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(60),
+                              side: const BorderSide(color: Color(0xFF9B59B6)),
+                            ),
+                            clipBehavior: Clip.antiAlias,
+                            elevation: 0,
+                            child: SmartSelect<Operator>.single(
+                              tileBuilder: (context, value) => S2Tile.fromState(
+                                value,
+                                dense: true,
+                                hideValue: true,
+                                trailing: const Icon(
+                                  Icons.manage_accounts_rounded,
+                                  size: 30,
+                                  color: Color(0xFF9B59B6),
+                                ),
+                                title: const Text(
+                                  'TÉCNICO RESPONSÁVEL',
+                                  style: TextStyle(
+                                    color: Color(0xFF9B59B6),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              title: 'TÉCNICO RESPONSÁVEL',
+                              modalType: S2ModalType.bottomSheet,
+                              selectedValue:
+                                  context.read<RegisterBloc>().state.form.serviceOperator,
+                              choiceItems: context
+                                  .read<RegisterBloc>()
+                                  .state
+                                  .operators
+                                  .getOrDflt([])
+                                  .map((e) => S2Choice(value: e, title: e.name))
+                                  .toList(),
+                              onChange: (selection) => {
+                                context.read<RegisterBloc>().add(
+                                      RegisterEvent.operatorChanged(
+                                        selection.value,
+                                      ),
+                                    )
+                              },
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                          child: Text(
+                            state.showErrors &&
+                                    context
+                                            .read<RegisterBloc>()
+                                            .state
+                                            .form
+                                            .serviceOperator
+                                            .operatorId ==
+                                        0
+                                ? 'Selecione um Técnico'
+                                : '',
+                            style: const TextStyle(color: Colors.red),
+                          ),
                         ),
                       ],
                     ),
@@ -113,7 +259,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: !state.isSaving
                         ? const Icon(
                             Icons.check_rounded,
-                            size: 45,
+                            size: 35,
                           )
                         : const CircularProgressIndicator(
                             color: Colors.white,

@@ -9,4 +9,4 @@ final GetIt getIt = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-Future<GetIt> configureDependencies() => $initGetIt(getIt);
+GetIt configureDependencies() => $initGetIt(getIt);

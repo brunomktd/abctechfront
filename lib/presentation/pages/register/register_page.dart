@@ -23,7 +23,10 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt.get<RegisterBloc>()..add(const RegisterEvent.initScreen()),
+      create: (context) => getIt.get<RegisterBloc>()
+        ..add(
+          const RegisterEvent.initScreen(),
+        ),
       child: Builder(
         builder: (context) {
           return SafeArea(
@@ -111,12 +114,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
                           child: Text(
-                            state.showErrors &&
-                                    context.read<RegisterBloc>().state.form.client.id == 0
-                                ? 'Selecione um cliente'
-                                : '',
+                            'Selecione um Cliente'.getOrEmpty(
+                              state.showErrors &&
+                                  context.read<RegisterBloc>().state.form.client.id == 0,
+                            ),
                             style: const TextStyle(color: Colors.red),
                           ),
                         ),
@@ -174,10 +177,10 @@ class _RegisterPageState extends State<RegisterPage> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
                           child: Text(
-                            state.showErrors &&
-                                    context.read<RegisterBloc>().state.form.services.isEmpty
-                                ? 'Selecione um serviço'
-                                : '',
+                            'Selecione um Serviço'.getOrEmpty(
+                              state.showErrors &&
+                                  context.read<RegisterBloc>().state.form.services.isEmpty,
+                            ),
                             style: const TextStyle(color: Colors.red),
                           ),
                         ),
@@ -236,16 +239,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
                           child: Text(
-                            state.showErrors &&
-                                    context
-                                            .read<RegisterBloc>()
-                                            .state
-                                            .form
-                                            .serviceOperator
-                                            .operatorId ==
-                                        0
-                                ? 'Selecione um Técnico'
-                                : '',
+                            'Selecione um Técnico'.getOrEmpty(
+                              state.showErrors && state.form.serviceOperator.operatorId == 0,
+                            ),
                             style: const TextStyle(color: Colors.red),
                           ),
                         ),

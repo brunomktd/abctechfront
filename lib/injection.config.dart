@@ -8,7 +8,6 @@
 import 'package:dio/dio.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:shared_preferences/shared_preferences.dart' as _i17;
 
 import 'application/order/order_bloc.dart' as _i15;
 import 'application/register/register_bloc.dart' as _i16;
@@ -19,7 +18,7 @@ import 'domain/order/interface/i_order_facade.dart' as _i13;
 import 'infraestructure/assistance/assistance_facade.dart' as _i7;
 import 'infraestructure/client/client_facade.dart' as _i9;
 import 'infraestructure/core/geolocation/geolocation_facade.dart' as _i10;
-import 'infraestructure/core/infa_injectable_module.dart' as _i18;
+import 'infraestructure/core/infa_injectable_module.dart' as _i17;
 import 'infraestructure/core/interceptors/config_interceptor.dart' as _i3;
 import 'infraestructure/core/interceptors/debug_interceptor.dart' as _i4;
 import 'infraestructure/operator/operator_facade.dart' as _i12;
@@ -28,11 +27,11 @@ import 'infraestructure/order/order_facade.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-Future<_i1.GetIt> $initGetIt(
+_i1.GetIt $initGetIt(
   _i1.GetIt get, {
   String? environment,
   _i2.EnvironmentFilter? environmentFilter,
-}) async {
+}) {
   final gh = _i2.GetItHelper(
     get,
     environment,
@@ -61,11 +60,7 @@ Future<_i1.GetIt> $initGetIt(
         get<_i11.IOperatorFacade>(),
         get<_i13.IOrderFacade>(),
       ));
-  await gh.lazySingletonAsync<_i17.SharedPreferences>(
-    () => infraInjectableModule.prefs,
-    preResolve: true,
-  );
   return get;
 }
 
-class _$InfraInjectableModule extends _i18.InfraInjectableModule {}
+class _$InfraInjectableModule extends _i17.InfraInjectableModule {}

@@ -65,6 +65,10 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
             emit(state.copyWith(serviceOperator: operatorChanged.serviceOperator));
             add(const OrderEvent.loadOrders());
           },
+          operatorCleared: (_) async {
+            emit(state.copyWith(serviceOperator: Operator.empty()));
+            add(const OrderEvent.loadOrders());
+          },
           startOrder: (StartOrder start) async {
             emit(state.copyWith(isLoading: true));
 

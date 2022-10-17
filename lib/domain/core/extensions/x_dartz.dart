@@ -57,6 +57,15 @@ extension StringX on String {
 
     return this;
   }
+
+  // ignore: avoid_positional_boolean_parameters
+  String getOrEmpty(bool condition) {
+    if (condition) {
+      return this;
+    }
+
+    return '';
+  }
 }
 
 extension BoolX on bool {

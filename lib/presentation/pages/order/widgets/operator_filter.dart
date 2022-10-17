@@ -31,17 +31,41 @@ class OperatorFilter extends StatelessWidget {
                 title: Row(
                   children: [
                     const Text(
-                      'Buscar por técnico',
+                      'Buscar por técnico:',
                       style: TextStyle(
                         fontSize: 14,
                       ),
                     ),
                     if (state.serviceOperator.name != '')
-                      Text(
-                        ': ${state.serviceOperator.name}',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                      InkWell(
+                        onTap: () {
+                          context.read<OrderBloc>().add(const OrderEvent.operatorCleared());
+                        },
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                          clipBehavior: Clip.antiAlias,
+                          elevation: 1,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                            child: Row(
+                              children: [
+                                Text(
+                                  state.serviceOperator.name,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                const Icon(
+                                  Icons.close,
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                   ],

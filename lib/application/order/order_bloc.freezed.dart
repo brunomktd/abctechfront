@@ -22,6 +22,7 @@ mixin _$OrderEvent {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -33,6 +34,7 @@ mixin _$OrderEvent {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -44,6 +46,7 @@ mixin _$OrderEvent {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -56,6 +59,7 @@ mixin _$OrderEvent {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -67,6 +71,7 @@ mixin _$OrderEvent {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -78,6 +83,7 @@ mixin _$OrderEvent {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -146,6 +152,7 @@ class _$InitGeolocation implements InitGeolocation {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -160,6 +167,7 @@ class _$InitGeolocation implements InitGeolocation {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -174,6 +182,7 @@ class _$InitGeolocation implements InitGeolocation {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -192,6 +201,7 @@ class _$InitGeolocation implements InitGeolocation {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -206,6 +216,7 @@ class _$InitGeolocation implements InitGeolocation {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -220,6 +231,7 @@ class _$InitGeolocation implements InitGeolocation {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -278,6 +290,7 @@ class _$LoadOrders implements LoadOrders {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -292,6 +305,7 @@ class _$LoadOrders implements LoadOrders {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -306,6 +320,7 @@ class _$LoadOrders implements LoadOrders {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -324,6 +339,7 @@ class _$LoadOrders implements LoadOrders {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -338,6 +354,7 @@ class _$LoadOrders implements LoadOrders {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -352,6 +369,7 @@ class _$LoadOrders implements LoadOrders {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -436,6 +454,7 @@ class _$StatusChanged implements StatusChanged {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -450,6 +469,7 @@ class _$StatusChanged implements StatusChanged {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -464,6 +484,7 @@ class _$StatusChanged implements StatusChanged {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -482,6 +503,7 @@ class _$StatusChanged implements StatusChanged {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -496,6 +518,7 @@ class _$StatusChanged implements StatusChanged {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -510,6 +533,7 @@ class _$StatusChanged implements StatusChanged {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -610,6 +634,7 @@ class _$OperatorChanged implements OperatorChanged {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -624,6 +649,7 @@ class _$OperatorChanged implements OperatorChanged {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -638,6 +664,7 @@ class _$OperatorChanged implements OperatorChanged {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -656,6 +683,7 @@ class _$OperatorChanged implements OperatorChanged {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -670,6 +698,7 @@ class _$OperatorChanged implements OperatorChanged {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -684,6 +713,7 @@ class _$OperatorChanged implements OperatorChanged {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -704,6 +734,144 @@ abstract class OperatorChanged implements OrderEvent {
   @JsonKey(ignore: true)
   _$$OperatorChangedCopyWith<_$OperatorChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OperatorClearedCopyWith<$Res> {
+  factory _$$OperatorClearedCopyWith(
+          _$OperatorCleared value, $Res Function(_$OperatorCleared) then) =
+      __$$OperatorClearedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OperatorClearedCopyWithImpl<$Res>
+    extends _$OrderEventCopyWithImpl<$Res, _$OperatorCleared>
+    implements _$$OperatorClearedCopyWith<$Res> {
+  __$$OperatorClearedCopyWithImpl(
+      _$OperatorCleared _value, $Res Function(_$OperatorCleared) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OperatorCleared implements OperatorCleared {
+  const _$OperatorCleared();
+
+  @override
+  String toString() {
+    return 'OrderEvent.operatorCleared()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OperatorCleared);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initGeolocation,
+    required TResult Function() loadOrders,
+    required TResult Function(OrderStatus status) statusChanged,
+    required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
+    required TResult Function(int orderId) startOrder,
+    required TResult Function(int orderId) endOrder,
+    required TResult Function(int orderId) cancelOrder,
+  }) {
+    return operatorCleared();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initGeolocation,
+    TResult? Function()? loadOrders,
+    TResult? Function(OrderStatus status)? statusChanged,
+    TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
+    TResult? Function(int orderId)? startOrder,
+    TResult? Function(int orderId)? endOrder,
+    TResult? Function(int orderId)? cancelOrder,
+  }) {
+    return operatorCleared?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initGeolocation,
+    TResult Function()? loadOrders,
+    TResult Function(OrderStatus status)? statusChanged,
+    TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
+    TResult Function(int orderId)? startOrder,
+    TResult Function(int orderId)? endOrder,
+    TResult Function(int orderId)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (operatorCleared != null) {
+      return operatorCleared();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitGeolocation value) initGeolocation,
+    required TResult Function(LoadOrders value) loadOrders,
+    required TResult Function(StatusChanged value) statusChanged,
+    required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
+    required TResult Function(StartOrder value) startOrder,
+    required TResult Function(EndOrder value) endOrder,
+    required TResult Function(CancelOrder value) cancelOrder,
+  }) {
+    return operatorCleared(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitGeolocation value)? initGeolocation,
+    TResult? Function(LoadOrders value)? loadOrders,
+    TResult? Function(StatusChanged value)? statusChanged,
+    TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
+    TResult? Function(StartOrder value)? startOrder,
+    TResult? Function(EndOrder value)? endOrder,
+    TResult? Function(CancelOrder value)? cancelOrder,
+  }) {
+    return operatorCleared?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitGeolocation value)? initGeolocation,
+    TResult Function(LoadOrders value)? loadOrders,
+    TResult Function(StatusChanged value)? statusChanged,
+    TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
+    TResult Function(StartOrder value)? startOrder,
+    TResult Function(EndOrder value)? endOrder,
+    TResult Function(CancelOrder value)? cancelOrder,
+    required TResult orElse(),
+  }) {
+    if (operatorCleared != null) {
+      return operatorCleared(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OperatorCleared implements OrderEvent {
+  const factory OperatorCleared() = _$OperatorCleared;
 }
 
 /// @nodoc
@@ -774,6 +942,7 @@ class _$StartOrder implements StartOrder {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -788,6 +957,7 @@ class _$StartOrder implements StartOrder {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -802,6 +972,7 @@ class _$StartOrder implements StartOrder {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -820,6 +991,7 @@ class _$StartOrder implements StartOrder {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -834,6 +1006,7 @@ class _$StartOrder implements StartOrder {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -848,6 +1021,7 @@ class _$StartOrder implements StartOrder {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -936,6 +1110,7 @@ class _$EndOrder implements EndOrder {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -950,6 +1125,7 @@ class _$EndOrder implements EndOrder {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -964,6 +1140,7 @@ class _$EndOrder implements EndOrder {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -982,6 +1159,7 @@ class _$EndOrder implements EndOrder {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -996,6 +1174,7 @@ class _$EndOrder implements EndOrder {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -1010,6 +1189,7 @@ class _$EndOrder implements EndOrder {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,
@@ -1099,6 +1279,7 @@ class _$CancelOrder implements CancelOrder {
     required TResult Function() loadOrders,
     required TResult Function(OrderStatus status) statusChanged,
     required TResult Function(Operator serviceOperator) operatorChanged,
+    required TResult Function() operatorCleared,
     required TResult Function(int orderId) startOrder,
     required TResult Function(int orderId) endOrder,
     required TResult Function(int orderId) cancelOrder,
@@ -1113,6 +1294,7 @@ class _$CancelOrder implements CancelOrder {
     TResult? Function()? loadOrders,
     TResult? Function(OrderStatus status)? statusChanged,
     TResult? Function(Operator serviceOperator)? operatorChanged,
+    TResult? Function()? operatorCleared,
     TResult? Function(int orderId)? startOrder,
     TResult? Function(int orderId)? endOrder,
     TResult? Function(int orderId)? cancelOrder,
@@ -1127,6 +1309,7 @@ class _$CancelOrder implements CancelOrder {
     TResult Function()? loadOrders,
     TResult Function(OrderStatus status)? statusChanged,
     TResult Function(Operator serviceOperator)? operatorChanged,
+    TResult Function()? operatorCleared,
     TResult Function(int orderId)? startOrder,
     TResult Function(int orderId)? endOrder,
     TResult Function(int orderId)? cancelOrder,
@@ -1145,6 +1328,7 @@ class _$CancelOrder implements CancelOrder {
     required TResult Function(LoadOrders value) loadOrders,
     required TResult Function(StatusChanged value) statusChanged,
     required TResult Function(OperatorChanged value) operatorChanged,
+    required TResult Function(OperatorCleared value) operatorCleared,
     required TResult Function(StartOrder value) startOrder,
     required TResult Function(EndOrder value) endOrder,
     required TResult Function(CancelOrder value) cancelOrder,
@@ -1159,6 +1343,7 @@ class _$CancelOrder implements CancelOrder {
     TResult? Function(LoadOrders value)? loadOrders,
     TResult? Function(StatusChanged value)? statusChanged,
     TResult? Function(OperatorChanged value)? operatorChanged,
+    TResult? Function(OperatorCleared value)? operatorCleared,
     TResult? Function(StartOrder value)? startOrder,
     TResult? Function(EndOrder value)? endOrder,
     TResult? Function(CancelOrder value)? cancelOrder,
@@ -1173,6 +1358,7 @@ class _$CancelOrder implements CancelOrder {
     TResult Function(LoadOrders value)? loadOrders,
     TResult Function(StatusChanged value)? statusChanged,
     TResult Function(OperatorChanged value)? operatorChanged,
+    TResult Function(OperatorCleared value)? operatorCleared,
     TResult Function(StartOrder value)? startOrder,
     TResult Function(EndOrder value)? endOrder,
     TResult Function(CancelOrder value)? cancelOrder,

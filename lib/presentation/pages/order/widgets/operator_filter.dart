@@ -47,7 +47,7 @@ class OperatorFilter extends StatelessWidget {
                   ],
                 ),
               ),
-              title: 'CLIENTE',
+              title: 'Técnico',
               placeholder: '',
               modalType: S2ModalType.bottomSheet,
               selectedValue: context.read<OrderBloc>().state.serviceOperator,

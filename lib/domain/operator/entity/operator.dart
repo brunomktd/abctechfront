@@ -19,7 +19,7 @@ class Operator with _$Operator {
 }
 
 extension OperatorX on Operator {
-  Option<ValidationError<dynamic>> get failureOption {
-    return validatePositiveNumber(operatorId).fold((f) => some(f), (_) => none());
+  Either<ValidationError<dynamic>, Unit> get failureOrUnit {
+    return operatorId > 0 ? right(unit) : left(ValidationError.zeroValue(failedValue: operatorId));
   }
 }

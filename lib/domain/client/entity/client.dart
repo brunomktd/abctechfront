@@ -19,7 +19,7 @@ class Client with _$Client {
 }
 
 extension ClientX on Client {
-  Option<ValidationError<dynamic>> get failureOption {
-    return validatePositiveNumber(id).fold((f) => some(f), (_) => none());
+  Either<ValidationError<dynamic>, Unit> get failureOrUnit {
+    return id > 0 ? right(unit) : left(ValidationError.zeroValue(failedValue: id));
   }
 }

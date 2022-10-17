@@ -95,6 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               title: 'Cliente',
                               modalType: S2ModalType.bottomSheet,
+                              choiceType: S2ChoiceType.chips,
                               selectedValue: context.read<RegisterBloc>().state.form.client,
                               choiceItems: context
                                   .read<RegisterBloc>()
@@ -156,6 +157,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               title: 'Serviços',
                               modalType: S2ModalType.bottomSheet,
+                              choiceType: S2ChoiceType.switches,
                               selectedValue: context.read<RegisterBloc>().state.form.services,
                               choiceItems: context
                                   .read<RegisterBloc>()
@@ -217,6 +219,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               title: 'Técnico Responsável',
                               modalType: S2ModalType.bottomSheet,
+                              choiceType: S2ChoiceType.chips,
                               selectedValue:
                                   context.read<RegisterBloc>().state.form.serviceOperator,
                               choiceItems: context

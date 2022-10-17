@@ -62,7 +62,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
             emit(state.copyWith(isSaving: false, save: some(save)));
           } else {
-            emit(state.copyWith(showErrors: true, isSaving: false));
+            emit(state.copyWith(showErrors: true, isSaving: false, save: none()));
           }
         },
         assistancesChanged: (e) async {

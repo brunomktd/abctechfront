@@ -33,8 +33,13 @@ class OrderDto with _$OrderDto {
 
 extension OrderDtoX on OrderDto {
   Option<ValidationError<dynamic>> get failureOption {
-    return client.failureOption.andThen(serviceOperator.failureOption).andThen(
-          validateListNotEmpty(services).fold((f) => some(f), (_) => none()),
-        );
+    return client.failureOrUnit
+        .andThen(serviceOperator.failureOrUnit)
+        .andThen(
+          services.isNotEmpty
+              ? right(unit)
+              : left(ValidationError.emptyList(failedValue: services)),
+        )
+        .fold((l) => some(l), (r) => none());
   }
 }

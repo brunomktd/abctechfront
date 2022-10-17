@@ -74,6 +74,7 @@ class OperatorFilter extends StatelessWidget {
               title: 'Técnico',
               placeholder: '',
               modalType: S2ModalType.bottomSheet,
+              choiceType: S2ChoiceType.chips,
               selectedValue: context.read<OrderBloc>().state.serviceOperator,
               choiceItems: context
                   .read<OrderBloc>()

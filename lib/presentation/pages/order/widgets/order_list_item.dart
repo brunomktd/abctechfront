@@ -69,7 +69,9 @@ class _OrderListItemState extends State<OrderListItem> {
                                       ),
                                     ),
                                     Text(
-                                      'TEC${widget.order.orderId.toString().padLeft(3, '0')}',
+                                      widget.order.orderId
+                                          .toString()
+                                          .padLeftWithLeading('OS', 3, '0'),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 12,
@@ -90,7 +92,9 @@ class _OrderListItemState extends State<OrderListItem> {
                                           .firstWhere(
                                             (e) => e.operatorId == widget.order.operatorId,
                                           )
-                                          .name,
+                                          .operatorId
+                                          .toString()
+                                          .padLeftWithLeading('TEC', 3, '0'),
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 12,

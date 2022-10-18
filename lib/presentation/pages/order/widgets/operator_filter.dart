@@ -41,6 +41,7 @@ class OperatorFilter extends StatelessWidget {
                         onTap: () {
                           context.read<OrderBloc>().add(const OrderEvent.operatorCleared());
                         },
+                        borderRadius: BorderRadius.circular(60),
                         child: Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(60),
@@ -81,7 +82,12 @@ class OperatorFilter extends StatelessWidget {
                   .state
                   .operators
                   .getOrDflt([])
-                  .map((e) => S2Choice(value: e, title: e.name))
+                  .map(
+                    (e) => S2Choice(
+                      value: e,
+                      title: e.operatorId.toString().padLeftWithLeading('TEC', 3, '0'),
+                    ),
+                  )
                   .toList(),
               onChange: (selection) => {
                 context.read<OrderBloc>().add(

@@ -50,7 +50,11 @@ class Details extends StatelessWidget {
                           const Text('Técnico'),
                           const SizedBox(height: 4),
                           Text(
-                            state.form.serviceOperator.name.dfltIfEmpty('Selecione o Técnico'),
+                            state.form.serviceOperator.operatorId == 0
+                                ? 'Selecione o Técnico'
+                                : state.form.serviceOperator.operatorId
+                                    .toString()
+                                    .padLeftWithLeading('TEC', 3, '0'),
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,

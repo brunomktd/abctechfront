@@ -227,7 +227,13 @@ class _RegisterPageState extends State<RegisterPage> {
                                   .state
                                   .operators
                                   .getOrDflt([])
-                                  .map((e) => S2Choice(value: e, title: e.name))
+                                  .map(
+                                    (e) => S2Choice(
+                                      value: e,
+                                      title:
+                                          e.operatorId.toString().padLeftWithLeading('TEC', 3, '0'),
+                                    ),
+                                  )
                                   .toList(),
                               onChange: (selection) => {
                                 context.read<RegisterBloc>().add(

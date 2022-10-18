@@ -66,6 +66,10 @@ extension StringX on String {
 
     return '';
   }
+
+  String padLeftWithLeading(String leading, int width, String char) {
+    return '$leading' '${padLeft(width, char)}';
+  }
 }
 
 extension BoolX on bool {

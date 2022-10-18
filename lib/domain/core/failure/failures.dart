@@ -11,12 +11,4 @@ class Failure with _$Failure {
     List<ApiError>? errors,
   }) =>
       Failure(errors ?? List.filled(1, ApiError.somethingWrong()));
-
-  factory Failure.connectivityError() => Failure(List.filled(1, ApiError.somethingWrong()));
-
-  factory Failure.unableToSync(String entity) =>
-      Failure(List.filled(1, ApiError.unableToSync(entity)));
-
-  factory Failure.animalOutOfSync({String? name}) =>
-      Failure(List.filled(1, ApiError.animalOutOfSync(name)));
 }

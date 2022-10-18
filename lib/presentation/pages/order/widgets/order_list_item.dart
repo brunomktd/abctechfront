@@ -173,11 +173,86 @@ class _OrderListItemState extends State<OrderListItem> {
                   ),
                 ),
                 expandedAlignment: Alignment.centerLeft,
-                childrenPadding: const EdgeInsets.all(8),
+                childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (widget.order.start != null) ...[
+                              const Text(
+                                'Geolocalização',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                            ],
+                            Column(
+                              children: [
+                                if (widget.order.start != null)
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        'Local Início:',
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Lat: ${widget.order.start!.latitude.toStringAsPrecision(4)}',
+                                          ),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                            'Long: ${widget.order.start!.longitude.toStringAsPrecision(4)}',
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                if (widget.order.end != null)
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        'Local Término:',
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Lat: ${widget.order.end!.latitude.toStringAsPrecision(4)}',
+                                          ),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                            'Long: ${widget.order.end!.longitude.toStringAsPrecision(4)}',
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
                       ServicesList(services: widget.order.services),
                       if (widget.order.status == OrderStatus.ANDAMENTO ||
                           widget.order.status == OrderStatus.PENDENTE)

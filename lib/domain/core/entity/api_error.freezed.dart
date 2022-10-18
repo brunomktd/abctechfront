@@ -22,7 +22,6 @@ ApiError _$ApiErrorFromJson(Map<String, dynamic> json) {
 mixin _$ApiError {
   String get code => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +34,7 @@ abstract class $ApiErrorCopyWith<$Res> {
   factory $ApiErrorCopyWith(ApiError value, $Res Function(ApiError) then) =
       _$ApiErrorCopyWithImpl<$Res, ApiError>;
   @useResult
-  $Res call({String code, String message, String type});
+  $Res call({String code, String message});
 }
 
 /// @nodoc
@@ -53,7 +52,6 @@ class _$ApiErrorCopyWithImpl<$Res, $Val extends ApiError>
   $Res call({
     Object? code = null,
     Object? message = null,
-    Object? type = null,
   }) {
     return _then(_value.copyWith(
       code: null == code
@@ -63,10 +61,6 @@ class _$ApiErrorCopyWithImpl<$Res, $Val extends ApiError>
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -79,7 +73,7 @@ abstract class _$$_ApiErrorCopyWith<$Res> implements $ApiErrorCopyWith<$Res> {
       __$$_ApiErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String code, String message, String type});
+  $Res call({String code, String message});
 }
 
 /// @nodoc
@@ -95,7 +89,6 @@ class __$$_ApiErrorCopyWithImpl<$Res>
   $Res call({
     Object? code = null,
     Object? message = null,
-    Object? type = null,
   }) {
     return _then(_$_ApiError(
       code: null == code
@@ -106,10 +99,6 @@ class __$$_ApiErrorCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -117,8 +106,7 @@ class __$$_ApiErrorCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ApiError implements _ApiError {
-  const _$_ApiError(
-      {required this.code, required this.message, required this.type});
+  const _$_ApiError({required this.code, required this.message});
 
   factory _$_ApiError.fromJson(Map<String, dynamic> json) =>
       _$$_ApiErrorFromJson(json);
@@ -127,12 +115,10 @@ class _$_ApiError implements _ApiError {
   final String code;
   @override
   final String message;
-  @override
-  final String type;
 
   @override
   String toString() {
-    return 'ApiError(code: $code, message: $message, type: $type)';
+    return 'ApiError(code: $code, message: $message)';
   }
 
   @override
@@ -141,13 +127,12 @@ class _$_ApiError implements _ApiError {
         (other.runtimeType == runtimeType &&
             other is _$_ApiError &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.message, message) || other.message == message));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, code, message, type);
+  int get hashCode => Object.hash(runtimeType, code, message);
 
   @JsonKey(ignore: true)
   @override
@@ -166,8 +151,7 @@ class _$_ApiError implements _ApiError {
 abstract class _ApiError implements ApiError {
   const factory _ApiError(
       {required final String code,
-      required final String message,
-      required final String type}) = _$_ApiError;
+      required final String message}) = _$_ApiError;
 
   factory _ApiError.fromJson(Map<String, dynamic> json) = _$_ApiError.fromJson;
 
@@ -175,8 +159,6 @@ abstract class _ApiError implements ApiError {
   String get code;
   @override
   String get message;
-  @override
-  String get type;
   @override
   @JsonKey(ignore: true)
   _$$_ApiErrorCopyWith<_$_ApiError> get copyWith =>

@@ -1,4 +1,5 @@
 import 'package:abctechfront/domain/assistance/entity/assistance_combo.dart';
+import 'package:abctechfront/presentation/ui/app_mobile_info.dart';
 import 'package:flutter/material.dart';
 
 class ServicesList extends StatelessWidget {
@@ -29,15 +30,26 @@ class ServicesList extends StatelessWidget {
                   ),
                 ),
               if (services.isNotEmpty)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    ...services.map(
-                      (e) => Text(
-                        ' \u2022 ${e.name}',
-                        style: const TextStyle(
-                          fontSize: 12,
-                        ),
+                    Container(
+                      constraints: BoxConstraints(maxWidth: mobileSize.width - 200),
+                      width: MediaQuery.of(context).size.width - 200,
+                      child: Wrap(
+                        direction: Axis.vertical,
+                        children: [
+                          ...services
+                              .map(
+                                (e) => Text(
+                                  ' \u2022 ${e.name}',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ],
                       ),
                     ),
                   ],

@@ -1,7 +1,6 @@
 import 'package:abctechfront/domain/assistance/entity/assistance_combo.dart';
 import 'package:abctechfront/domain/client/entity/client.dart';
 import 'package:abctechfront/domain/core/validation/validation_errors.dart';
-import 'package:abctechfront/domain/core/validation/value_validators.dart';
 import 'package:abctechfront/domain/operator/entity/operator.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -39,6 +38,11 @@ extension OrderDtoX on OrderDto {
           services.isNotEmpty
               ? right(unit)
               : left(ValidationError.emptyList(failedValue: services)),
+        )
+        .andThen(
+          services.length <= 15
+              ? right(unit)
+              : left(ValidationError.listTooLong(failedValue: services, max: 15)),
         )
         .fold((l) => some(l), (r) => none());
   }

@@ -36,7 +36,7 @@ class OperatorFilter extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
-                    if (state.serviceOperator.name != '')
+                    if (state.serviceOperator.operatorId > 0)
                       InkWell(
                         onTap: () {
                           context.read<OrderBloc>().add(const OrderEvent.operatorCleared());
@@ -53,7 +53,9 @@ class OperatorFilter extends StatelessWidget {
                             child: Row(
                               children: [
                                 Text(
-                                  state.serviceOperator.name,
+                                  state.serviceOperator.operatorId
+                                      .toString()
+                                      .padLeftWithLeading('TEC', 3, '0'),
                                   style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
